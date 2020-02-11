@@ -1,0 +1,43 @@
+<div class="box">
+  <div class="box__title"></div>
+  <div class="box__container">
+    <div class="box__left">
+      <div class="box__content">
+        <div
+        class="square"
+        *ngFor="let item of squareFilters; let i = index"
+        (click)="showMore(i)"
+
+      >
+        <div class="square__container" [ngStyle]="{ borderColor: item.tag }" [ngClass]="{'active': squareSelected && item === squareSelected.item}">
+          <div class="square__title">{{ "Square ID: " + item.id }}</div>
+          <div class="square__des">
+            {{ "clicked: " + item.clickedNum }}
+          </div>
+        </div>
+      </div>
+      </div>
+
+      
+      <div class="box__action">
+        <button (click)="loadMore()">Load more</button>
+      </div>
+    </div>
+    <div *ngIf="squareSelected" class="box__right">
+      <div class="group">
+        <span class="group__title">Square ID: </span>
+        <span class="group__des">{{squareSelected.item.id}}</span>
+      </div>
+      <span style="color: red;">{{'Move from '+(squareSelected.preIndex + 1)+ ' to '+ (squareSelected.index+1)}}</span>
+      <div class="group">
+        <span class="group__title">Title: </span>
+        <span class="group__des">{{squareSelected.item.title}}</span>
+      </div>
+      <div class="group">
+        <span class="group__title">Body: </span>
+        <span class="group__des">{{squareSelected.item.body}}</span>
+      </div>
+      
+    </div>
+  </div>
+</div>

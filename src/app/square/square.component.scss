@@ -1,0 +1,47 @@
+.box {
+  &__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  &__right {
+    width: 156px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.square {
+  width: 148px;
+  height: 148px;
+  display: flex;
+
+  &__container {
+    flex-grow: 1;
+    margin: 8px 16px 8px 0;
+    padding: 16px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &.active{
+        background-color: gray;
+    }
+  }
+}
+.group {
+  &__title {
+    font-weight: bold;
+  }
+}
